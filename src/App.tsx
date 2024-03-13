@@ -31,7 +31,7 @@ const App = () => {
         })
       } else {
         const remainingNums = [
-          ...nums.slice(0, numIndex), 
+          ...nums.slice(0, numIndex),
           ...nums.slice(numIndex + 1)
         ]
 
@@ -72,7 +72,7 @@ const App = () => {
 
             let value = sga
             let solutions:number[] = []
-            if (solution.hasOwnProperty(i)) {
+            if (solution[i]) {
               solutions = solution[i]
             }
             if (solutions.length === 1) {
@@ -126,7 +126,7 @@ const App = () => {
             }
 
             let solutions:number[] = []
-            if (solution.hasOwnProperty(activeCell)) {
+            if (solution[activeCell]) {
               solutions = solution[activeCell]
             }
 
