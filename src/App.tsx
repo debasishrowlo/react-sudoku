@@ -1,4 +1,4 @@
-import { useState, MouseEvent } from "react"
+import { useEffect, useState } from "react"
 import classnames from "classnames"
 
 const App = () => {
@@ -13,7 +13,15 @@ const App = () => {
     0, 0, 2, 4, 7, 3, 0, 9, 0,
     5, 0, 8, 9, 2, 1, 7, 0, 4,
   ])
-  const [solution, setSolution] = useState<{ [key:number]: number[] }>({})
+  // const [solution, setSolution] = useState<{ [key:number]: number[] }>({})
+  // const [solution, setSolution] = useState<{ [key:number]: number[] }>({
+  //   3: [1],
+  //   12: [7],
+  //   27: [2],
+  // })
+  const [solution, setSolution] = useState<{ [key:number]: number[] }>(
+    {"3":[1],"4":[3],"8":[1],"12":[7],"13":[5],"14":[7],"15":[9],"16":[5],"17":[5],"22":[7],"23":[9],"24":[6],"25":[5],"26":[8],"27":[2],"30":[6],"32":[9],"33":[7],"34":[6],"36":[2],"37":[9],"40":[2],"42":[5],"44":[7],"45":[4],"46":[6],"47":[7],"48":[3],"49":[5],"50":[8],"52":[3],"53":[7],"55":[3],"56":[1],"59":[8],"60":[3],"62":[9],"63":[2],"64":[5],"69":[3],"71":[7],"73":[2],"79":[1]}
+  )
   const [activeCell, setActiveCell] = useState<number|null>(null)
 
   const changeNumber = (num:number) => {
@@ -60,6 +68,20 @@ const App = () => {
 
     setActiveCell(cellIndex)
   }
+
+  const isValid = () => {
+    // for(const girdItem in grid){
+    //   if(girdItem === activeCell.toString()){
+        
+    //   }
+    // }
+
+    
+  }
+
+  useEffect(() => {
+    console.log(isValid())
+  }, [])
     
   return (
     <div className="h-screen flex items-center justify-center">
